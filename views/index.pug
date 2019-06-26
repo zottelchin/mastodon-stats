@@ -1,0 +1,24 @@
+doctype html
+html(lang='de')  
+  head  
+    style
+      include bulma.min.css
+    title= 'Mastodon Statistiken für ' + instance  
+  body!= body
+    div.container
+      h1.title.has-text-centered.is-1= 'Mastodon Statistiken für ' + instance
+      table.table.is-striped.is-fullwidth
+        tr
+          th= 'ID'
+          th= 'Meldung'
+          th= 'Sanktion'
+          th= 'Nutzer'
+          th= 'Domain'
+          th= 'suspended'
+          th= 'Stumm geschaltet'
+          th= 'Moderator'
+
+        each r in reports
+          tr  
+            each x in r 
+              td= x
